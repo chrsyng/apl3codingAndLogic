@@ -15,7 +15,6 @@ manager: dongill
 ms.date: 08/21/2018
 ---
 
-# icacls
 
 Displays or modifies discretionary access control lists (DACLs) on specified files, and applies stored DACLs to files in specified directories.
 

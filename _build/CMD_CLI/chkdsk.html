@@ -7,7 +7,7 @@ pagenum: 3
 prev_page:
   url: /CMD_CLI/cd.html
 next_page:
-  url: /CMD_CLI/chkdsk.html
+  url: /CMD_CLI/copy.html
 suffix: .md
 search: chkdsk disk errors volume file f only not drive files check command ntfs open parameter fat system displays any run cannot allocation report checks used r size computer scan because parameters status want must message found might lost shadow copies physical does fix x b required examples c name table set specify locked next restart runs running data specified dirty windows units fixed shared folders logical without fixes important local prompt corruption syntax l lock directory checked includes functionality reduces amount type after chains following partition restarted finishes large exit lists administrator click interrupting however should before repairs disks letter
 title: chkdsk
@@ -30,7 +30,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="chkdsk">chkdsk<a class="anchor-link" href="#chkdsk"> </a></h1><p>Checks the file system and file system metadata of a volume for logical and physical errors. If used without parameters, <strong>chkdsk</strong> displays only the status of the volume and does not fix any errors. If used with the <strong>/f</strong>, <strong>/r</strong>, <strong>/x</strong>, or <strong>/b</strong> parameters, it fixes errors on the volume.</p>
+<p>Checks the file system and file system metadata of a volume for logical and physical errors. If used without parameters, <strong>chkdsk</strong> displays only the status of the volume and does not fix any errors. If used with the <strong>/f</strong>, <strong>/r</strong>, <strong>/x</strong>, or <strong>/b</strong> parameters, it fixes errors on the volume.</p>
 <blockquote><p>[!IMPORTANT]
 Membership in the local <strong>Administrators</strong> group, or equivalent, is the minimum required to run <strong>chkdsk</strong>. To open a command prompt window as an administrator, right-click <strong>Command prompt</strong> in the Start menu, and then click <strong>Run as administrator</strong>.</p>
 <p>[!IMPORTANT]
@@ -161,17 +161,17 @@ Convert lost chains to files?</code></pre>
 </li>
 <li><p>Understanding exit codes</p>
 <p>The following table lists the exit codes that <strong>chkdsk</strong> reports after it has finished.</p>
-<p>| Exit code |                                                   Description                                                    |
-|-----------|------------------------------------------------------------------------------------------------------------------|
-|     0     |                                              No errors were found.                                               |
-|     1     |                                           Errors were found and fixed.                                           |
-|     2     | Performed disk cleanup (such as garbage collection) or did not perform cleanup because <strong>/f</strong> was not specified. |
-|     3     | Could not check the disk, errors could not be fixed, or errors were not fixed because <strong>/f</strong> was not specified.  |</p>
+<p>| Exit code | Description                                                                                                      |
+| --------- | ---------------------------------------------------------------------------------------------------------------- |
+| 0         | No errors were found.                                                                                            |
+| 1         | Errors were found and fixed.                                                                                     |
+| 2         | Performed disk cleanup (such as garbage collection) or did not perform cleanup because <strong>/f</strong> was not specified. |
+| 3         | Could not check the disk, errors could not be fixed, or errors were not fixed because <strong>/f</strong> was not specified.  |</p>
 </li>
-</ul>
-<ul>
-<li>The <strong>chkdsk</strong> command, with different parameters, is available from the Recovery Console.</li>
-<li>On servers that are infrequently restarted, you may want to use the <strong>chkntfs</strong> or the <strong>fsutil dirty query</strong> commands to determine whether the volume's dirty bit is already set before running chkdsk.</li>
+<li><p>The <strong>chkdsk</strong> command, with different parameters, is available from the Recovery Console.</p>
+</li>
+<li><p>On servers that are infrequently restarted, you may want to use the <strong>chkntfs</strong> or the <strong>fsutil dirty query</strong> commands to determine whether the volume's dirty bit is already set before running chkdsk.</p>
+</li>
 </ul>
 <h2 id="Examples">Examples<a class="anchor-link" href="#Examples"> </a></h2><p>If you want to check the disk in drive D and have Windows fix errors, type:</p>
 

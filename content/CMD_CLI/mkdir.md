@@ -15,8 +15,6 @@ manager: dongill
 ms.date: 10/16/2017
 ---
 
-# mkdir
-
 
 
 This command is the same as the **md** command. See [Md](md.md) for syntax and parameters.

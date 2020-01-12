@@ -9,7 +9,7 @@ prev_page:
 next_page:
   url: /BASH_CLI/chmod.html
 suffix: .md
-search: change shell working directory
+search: directory dir symbolic links shell p variable change working l current value cdpath used cd e default containing name slash not option set resolve processing instances successfully exit non zero status file attributes home defines search path alternative names separated colon null same begins found cdablevars assumed its options force followed after physical structure without following before supplied cannot determined systems support present extended follow specified processed removing immediately previous pathname component back beginning returns changed pwd otherwise
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -21,7 +21,40 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Change-the-shell-working-directory.">Change the shell working directory.<a class="anchor-link" href="#Change-the-shell-working-directory."> </a></h2><p>cd: cd [-L|[-P [-e]] [-@]] [dir]</p>
 <p>Change the shell working directory.</p>
+
+<pre><code>Change the current directory to DIR.  The default DIR is the value of the
+HOME shell variable.
+
+The variable CDPATH defines the search path for the directory containing
+DIR.  Alternative directory names in CDPATH are separated by a colon (:).
+A null directory name is the same as the current directory.  If DIR begins
+with a slash (/), then CDPATH is not used.
+
+If the directory is not found, and the shell option `cdable_vars' is set,
+the word is assumed to be  a variable name.  If that variable has a value,
+its value is used for DIR.
+
+Options:
+  -L    force symbolic links to be followed: resolve symbolic
+        links in DIR after processing instances of `..'
+  -P    use the physical directory structure without following
+        symbolic links: resolve symbolic links in DIR before
+        processing instances of `..'
+  -e    if the -P option is supplied, and the current working
+        directory cannot be determined successfully, exit with
+        a non-zero status
+  -@    on systems that support it, present a file with extended
+        attributes as a directory containing the file attributes
+
+The default is to follow symbolic links, as if `-L' were specified.
+`..' is processed by removing the immediately previous pathname component
+back to a slash or the beginning of DIR.
+
+Exit Status:
+Returns 0 if the directory is changed, and if $PWD is set successfully when
+-P is used; non-zero otherwise.</code></pre>
 
 </div>
 </div>

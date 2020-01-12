@@ -55,7 +55,7 @@
     url: /CMD_CLI/chkdsk
     not_numbered: true
   - title: copy
-    url: /CMD_CLI/chkdsk
+    url: /CMD_CLI/copy
     not_numbered: true
   - title: del 
     url: /CMD_CLI/del

@@ -15,8 +15,6 @@ manager: dongill
 ms.date: 10/16/2017
 ---
 
-# del
-
 
 
 Deletes one or more files. This command is the same as the **erase** command.

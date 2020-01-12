@@ -9,7 +9,7 @@ prev_page:
 next_page:
   url: /CMD_CLI/ping.html
 suffix: .md
-search: tcp statistics protocol ip ipv udp netstat displays connections port parameter active protocols n s shown command address windows computer used p display server o name type r ethernet icmp icmpv parameters syntax e interval process connection specified information only local established ports listening routing table combined names pid tcpv udpv installed selected every seconds corresponds unless not yet asterisk state states finwait network ids line key applies semi annual channel without description such bytes packets sent received however addresses numbers expressed numerically attempt made determine includes id application based processes tab task manager shows case default specify set contents
+search: tcp statistics protocol ip port displays ipv udp connections netstat parameter active protocols n s shown command address windows computer used p connection display name server listening o type r ethernet icmp icmpv parameters syntax e interval process specified information only unless local established ports routing table combined names pid case tcpv udpv installed selected every seconds executable involved creating cases components component corresponds not yet asterisk state states finwait network ids line key applies semi annual channel without description such bytes packets sent received however addresses numbers expressed numerically attempt made determine includes id application based processes tab task
 title: netstat
 description: "Windows Commands topic for **** - "
 ms.custom: na
@@ -34,7 +34,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="netstat">netstat<a class="anchor-link" href="#netstat"> </a></h1><blockquote><p>Applies To: Windows Server (Semi-Annual Channel), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012</p>
+<blockquote><p>Applies To: Windows Server (Semi-Annual Channel), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012</p>
 </blockquote>
 <p>Displays active TCP connections, ports on which the computer is listening, Ethernet statistics, the IP routing table, IPv4 statistics (for the IP, ICMP, TCP, and UDP protocols), and IPv6 statistics (for the IPv6, ICMPv6, TCP over IPv6, and UDP over IPv6 protocols). Used without parameters, <strong>netstat</strong> displays active TCP connections.</p>
 <h2 id="Syntax">Syntax<a class="anchor-link" href="#Syntax"> </a></h2>
@@ -81,6 +81,10 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <tr>
 <td>/?</td>
 <td>Displays help at the command prompt.</td>
+</tr>
+<tr>
+<td>-b</td>
+<td>Displays the executable involved in creating each connection or listening port. In some cases well-known executables host multiple independent components, and in these cases the sequence of components involved in creating the connection or listening port is displayed. In this case the executable name is in [] at the bottom, on top is the component it called, and so forth until TCP/IP was reached. Note that this option can be time-consuming and will fail unless you have sufficient permissions.</td>
 </tr>
 </tbody>
 </table>

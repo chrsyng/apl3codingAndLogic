@@ -15,7 +15,6 @@ manager: dongill
 ms.date: 07/11/2018
 ---
 
-# ren
 
 Renames files or directories. This command is the same as the **rename** command.
 

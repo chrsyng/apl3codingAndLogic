@@ -1,0 +1,189 @@
+---
+redirect_from:
+  - "/cmd-cli/copy"
+title: |-
+  copy
+pagenum: 4
+prev_page:
+  url: /CMD_CLI/chkdsk.html
+next_page:
+  url: /CMD_CLI/del.html
+suffix: .md
+search: file copy files b destination command name directory doc source current using drive end combine rpt y character ctrlz type txt characters line combined named copies copied copying extension want ascii follows example device ref v z mode binary data combines not into report syntax letter applies specify date birds location existing displays precedes list its default unless does also single connection following robin typ located c mar apr examples bkmkexamples d n parameters parameter new correctly uses available longer confirm overwrite indicates text required specifies set consist colon combination indicate listed until encounters case preceding effect depends position string
+title: copy
+description: "Windows Commands topic for **** - "
+ms.custom: na
+ms.prod: windows-server
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 9624d4a1-349a-4693-ad00-1d1d4e59e9ac
+
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">copy</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Copies one or more files from one location to another.</p>
+<p>For examples of how to use this command, see <a href="#BKMK_examples">Examples</a>.</p>
+<h2 id="Syntax">Syntax<a class="anchor-link" href="#Syntax"> </a></h2>
+<pre><code>copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] &lt;Source&gt; [/a | /b] [+&lt;Source&gt; [/a | /b] [+ ...]] [&lt;Destination&gt; [/a | /b]]</code></pre>
+<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h2><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/d</td>
+<td>Allows the encrypted files being copied to be saved as decrypted files at the destination.</td>
+</tr>
+<tr>
+<td>/v</td>
+<td>Verifies that new files are written correctly.</td>
+</tr>
+<tr>
+<td>/n</td>
+<td>Uses a short file name, if available, when copying a file with a name longer than eight characters, or with a file name extension longer than three characters.</td>
+</tr>
+<tr>
+<td>/y</td>
+<td>Suppresses prompting to confirm that you want to overwrite an existing destination file.</td>
+</tr>
+<tr>
+<td>/-y</td>
+<td>Prompts you to confirm that you want to overwrite an existing destination file.</td>
+</tr>
+<tr>
+<td>/z</td>
+<td>Copies networked files in restartable mode.</td>
+</tr>
+<tr>
+<td>/a</td>
+<td>Indicates an ASCII text file.</td>
+</tr>
+<tr>
+<td>/b</td>
+<td>Indicates a binary file.</td>
+</tr>
+<tr>
+<td>\<Source></td>
+<td>Required. Specifies the location from which you want to copy a file or set of files. <em>Source</em> can consist of a drive letter and colon, a directory name, a file name, or a combination of these.</td>
+</tr>
+<tr>
+<td>\<Destination></td>
+<td>Required. Specifies the location to which you want to copy a file or set of files. <em>Destination</em> can consist of a drive letter and colon, a directory name, a file name, or a combination of these.</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>Displays help at the command prompt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Remarks">Remarks<a class="anchor-link" href="#Remarks"> </a></h2><ul>
+<li><p>You can copy an ASCII text file that uses an end-of-file character (CTRL+Z) to indicate the end of the file.</p>
+</li>
+<li><p>Using <strong>/a</strong></p>
+<p>When <strong>/a</strong> precedes or follows a list of files on the command line, it applies to all files listed until <strong>copy</strong> encounters <strong>/b</strong>. In this case, <strong>/b</strong> applies to the file preceding <strong>/b</strong>.</p>
+<p>The effect of <strong>/a</strong> depends on its position in the command-line string. When <strong>/a</strong> follows <em>Source</em>, <strong>copy</strong> treats the file as an ASCII file and copies data that precedes the first end-of-file character (CTRL+Z).</p>
+<p>When <strong>/a</strong> follows <em>Destination</em>, <strong>copy</strong> adds an end-of-file character (CTRL+Z) as the last character of the file.</p>
+</li>
+<li><p>Using <strong>/b</strong></p>
+<p><strong>/b</strong> directs the command interpreter to read the number of bytes specified by the file size in the directory. <strong>/b</strong> is the default value for <strong>copy</strong>, unless <strong>copy</strong> combines files.</p>
+<p>When <strong>/b</strong> precedes or follows a list of files on the command line, it applies to all listed files until <strong>copy</strong> encounters <strong>/a</strong>. In this case, <strong>/a</strong> applies to the file preceding <strong>/a</strong>.</p>
+<p>The effect of <strong>/b</strong> depends on its position in the command–line string. When <strong>/b</strong> follows <em>Source</em>, <strong>copy</strong> copies the entire file, including any end-of-file character (CTRL+Z).</p>
+<p>When <strong>/b</strong> follows <em>Destination</em>, <strong>copy</strong> does not add an end-of-file character (CTRL+Z).</p>
+</li>
+<li><p>Using <strong>/v</strong></p>
+<p>If a write operation cannot be verified an error message appears. Although recording errors rarely occur with <strong>copy</strong>, you can use <strong>/v</strong> to verify that critical data has been correctly recorded. The <strong>/v</strong> command-line option also slows down the <strong>copy</strong> command, because each sector recorded on the disk must be checked.</p>
+</li>
+<li><p>Using <strong>/y</strong> and <strong>/-y</strong></p>
+<p>If <strong>/y</strong> is preset in the COPYCMD environment variable, you can override this setting by using <strong>/-y</strong> at the command line. By default, you are prompted when you replace this setting, unless the <strong>copy</strong> command is executed in a batch script.</p>
+</li>
+<li><p>Appending files</p>
+<p>To append files, specify a single file for <em>Destination</em>, but multiple files for <em>Source</em> (use wildcard characters or <em>File1</em>+<em>File2</em>+<em>File3</em> format).</p>
+</li>
+<li><p>Using <strong>/z</strong></p>
+<p>If the connection is lost during the copy phase (for example, if the server going offline breaks the connection), <strong>copy /z</strong> resumes after the connection is re-established. <strong>/z</strong> also displays the percentage of the copy operation that is completed for each file.</p>
+</li>
+<li><p>Copying to and from devices</p>
+<p>You can substitute a device name for one or more occurrences of <em>Source</em> or <em>Destination</em>.</p>
+</li>
+<li><p>Using or omitting <strong>/b</strong> when copying to a device</p>
+<p>When <em>Destination</em> is a device (for example, Com1 or Lpt1), <strong>/b</strong> copies data to the device in binary mode. In binary mode, <strong>copy /b</strong> copies all characters (including special characters such as CTRL+C, CTRL+S, CTRL+Z, and ENTER) to the device as data. However, if you omit <strong>/b</strong>, data is copied to the device in ASCII mode. In ASCII mode, special characters might cause files to combine during the copying process.</p>
+</li>
+<li><p>Using the default destination file</p>
+<p>If you do not specify a destination file, a copy is created with the same name, modified date, and modified time as the original file. The new copy is stored in the current directory on the current drive. If the source file is on the current drive and in the current directory and you do not specify a different drive or directory for the destination file, the <strong>copy</strong> command stops and displays the following error message:</p>
+<p><code>File cannot be copied onto itself</code></p>
+<p><code>0 File(s) copied</code></p>
+</li>
+<li><p>Combining files</p>
+<p>If you specify more than one file in <em>Source</em>, <strong>copy</strong> combines them all into a single file using the file name specified in <em>Destination</em>. <strong>Copy</strong> assumes the combined files are ASCII files unless you use the <strong>/b</strong> option.</p>
+</li>
+<li><p>Copying zero-length files</p>
+<p><strong>Copy</strong> does not copy files that are 0 bytes long. Use <strong>xcopy</strong> to copy these files.</p>
+</li>
+<li><p>Changing the time and date of a file</p>
+<p>If you want to assign the current time and date to a file without modifying the file, use the following syntax:</p>
+
+<pre><code>copy /b &lt;Source&gt; +,,</code></pre>
+<p>The commas indicate the omission of the <em>Destination</em> parameter.</p>
+</li>
+<li><p>Copying files in subdirectories</p>
+<p>To copy all of a directory's files and subdirectories, use the <strong>xcopy</strong> command.</p>
+</li>
+<li><p>The <strong>copy</strong> command, with different parameters, is available from the Recovery Console.</p>
+</li>
+</ul>
+<h2 id="Examples"><a name="BKMK_examples" />Examples<a class="anchor-link" href="#Examples"> </a></h2><p>To copy a file called Memo.doc to Letter.doc in the current drive and ensure that an end-of-file character (CTRL+Z) is at the end of the copied file, type:</p>
+
+<pre><code>copy memo.doc letter.doc /a</code></pre>
+<p>To copy a file named Robin.typ from the current drive and directory to an existing directory named Birds that is located on drive C, type:</p>
+
+<pre><code>copy robin.typ c:\birds</code></pre>
+<p>If the Birds directory does not exist, the file Robin.typ is copied into a file named Birds that is located in the root directory on the disk in drive C.</p>
+<p>To combine Mar89.rpt, Apr89.rpt, and May89.rpt, which are located in the current directory, and place them in a file named Report (also in the current directory), type:</p>
+
+<pre><code>copy mar89.rpt + apr89.rpt + may89.rpt Report</code></pre>
+<p>When you combine files, <strong>copy</strong> marks the destination file with the current date and time. If you omit <em>Destination</em>, the files are combined and stored under the name of the first file in the list. For example, to combine all files in Report when a file named Report already exists, type:</p>
+
+<pre><code>copy report + mar89.rpt + apr89.rpt + may89.rpt</code></pre>
+<p>To combine all files in the current directory that have the.txt file name extension into a single file named Combined.doc, type:</p>
+
+<pre><code>copy *.txt Combined.doc</code></pre>
+<p>If you want to combine several binary files into one file by using wildcard characters, include <strong>/b</strong>. This prevents Windows from treating CTRL+Z as an end-of-file character. For example, type:</p>
+
+<pre><code>copy /b *.exe Combined.exe</code></pre>
+<blockquote><p>[!CAUTION]
+If you combine binary files, the resulting file might be unusable due to internal formatting.</p>
+</blockquote>
+<p>In the following example, <strong>copy</strong> combines each file that has a .txt extension with its corresponding .ref file. The result is a file with the same file name but with a .doc extension. <strong>Copy</strong> combines File1.txt with File1.ref to form File1.doc, and then <strong>copy</strong> combines File2.txt with File2.ref to form File2.doc, and so on. For example, type:</p>
+
+<pre><code>copy *.txt + *.ref *.doc</code></pre>
+<p>To combine all files with the .txt extension, and then combine all files with the .ref extension into one file named Combined.doc, type:</p>
+
+<pre><code>copy *.txt + *.ref Combined.doc</code></pre>
+<h4 id="Additional-references">Additional references<a class="anchor-link" href="#Additional-references"> </a></h4><p><a href="command-line-syntax-key.md">Command-Line Syntax Key</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
