@@ -22,7 +22,7 @@
 # See the links below for an example.
 
 # Top-level page
-- title: Home
+- title: Introduction
   url: /intro
   not_numbered: true
 
@@ -33,8 +33,8 @@
 #  not_numbered: true
 
 # Adds a searchbar link
-- title: Search
-  search: true
+#- title: Search
+#  search: true
 
 # Divider for meta-pages and content page
 - divider: true
@@ -48,49 +48,49 @@
   not_numbered: true
   expand_sections: true
   sections:
-  - title: Change directory
+  - title: cd
     url: /CMD_CLI/cd
     not_numbered: true
-  - title: Check disk
+  - title: chkdsk
     url: /CMD_CLI/chkdsk
     not_numbered: true
-  - title: Copy files
+  - title: copy
     url: /CMD_CLI/chkdsk
     not_numbered: true
-  - title: Delete 
+  - title: del 
     url: /CMD_CLI/del
     not_numbered: true
-  - title: Directory listinga
+  - title: dir
     url: /CMD_CLI/dir
     not_numbered: true
   - title: icacls
     url: /CMD_CLI/icacls
     not_numbered: true
-  - title: IP configuration
+  - title: ipconfig
     url: /CMD_CLI/ipconfig
     not_numbered: true
-  - title: 
+  - title: mkdir
     url: /CMD_CLI/mkdir
     not_numbered: true
-  - title:
+  - title: move
     url: /CMD_CLI/move
     not_numbered: true
-#  - title: 
-#    url: /CMD_CLI/net
-#    not_numbered: true
-  - title: 
+  - title: net
+    url: /CMD_CLI/net
+    not_numbered: true
+  - title: netstat 
     url: /CMD_CLI/netstat
     not_numbered: true
-  - title: 
+  - title: ping
     url: /CMD_CLI/ping
     not_numbered: true
-  - title: 
+  - title: ren
     url: /CMD_CLI/ren
     not_numbered: true
-  - title: 
+  - title: systeminfo
     url: /CMD_CLI/systeminfo
     not_numbered: true
-  - title: 
+  - title: tracert
     url: /CMD_CLI/tracert
     not_numbered: true
 # A chapter w/ a collection of sections beneath it
