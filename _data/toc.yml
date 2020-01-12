@@ -1,0 +1,168 @@
+# This file contains the order and numbering for all sections in the book.
+#
+# It is a sample TOC file to help you get started. Fill it out with entries
+# for your own content.
+#
+# Each entry has the following schema:
+#
+# - title: mytitle   # Title of chapter or section
+#   url: /myurl  # URL of section relative to the /content/ folder.
+#   sections:  # Contains a list of more entries that make up the chapter's sections
+#   not_numbered: true  # if the section shouldn't have a number in the sidebar
+#     (e.g. Introduction or appendices)
+#   expand_sections: true  # if you'd like the sections of this chapter to always
+#     be expanded in the sidebar.
+#   external: true  # Whether the URL is an external link or points to content in the book
+#
+# Below are some special values that trigger specific behavior:
+# - search: true  # Will provide a link to a search page
+# - divider: true  # Will insert a divider in the sidebar
+# - header: My Header  # Will insert a header with no link in the sidebar
+#
+# See the links below for an example.
+
+# Top-level page
+- title: Home
+  url: /intro
+  not_numbered: true
+
+# External link
+#- title: GitHub repository
+#  url: https://github.com/jupyter/jupyter-book
+#  external: true
+#  not_numbered: true
+
+# Adds a searchbar link
+- title: Search
+  search: true
+
+# Divider for meta-pages and content page
+- divider: true
+
+# Add a header and sample content section
+#- header: Demo textbook
+
+# A chapter w/ a collection of sections beneath it
+- title: Windows CMD CLI 
+  url: /CMD_CLI/intro 
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Change directory
+    url: /CMD_CLI/cd
+    not_numbered: true
+  - title: Check disk
+    url: /CMD_CLI/chkdsk
+    not_numbered: true
+  - title: Copy files
+    url: /CMD_CLI/chkdsk
+    not_numbered: true
+  - title: Delete 
+    url: /CMD_CLI/del
+    not_numbered: true
+  - title: Directory listinga
+    url: /CMD_CLI/dir
+    not_numbered: true
+  - title: icacls
+    url: /CMD_CLI/icacls
+    not_numbered: true
+  - title: IP configuration
+    url: /CMD_CLI/ipconfig
+    not_numbered: true
+  - title: 
+    url: /CMD_CLI/mkdir
+    not_numbered: true
+  - title:
+    url: /CMD_CLI/move
+    not_numbered: true
+#  - title: 
+#    url: /CMD_CLI/net
+#    not_numbered: true
+  - title: 
+    url: /CMD_CLI/netstat
+    not_numbered: true
+  - title: 
+    url: /CMD_CLI/ping
+    not_numbered: true
+  - title: 
+    url: /CMD_CLI/ren
+    not_numbered: true
+  - title: 
+    url: /CMD_CLI/systeminfo
+    not_numbered: true
+  - title: 
+    url: /CMD_CLI/tracert
+    not_numbered: true
+# A chapter w/ a collection of sections beneath it
+- title: Bash shell 
+  url: /BASH_CLI/intro 
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: cd
+    url: /BASH_CLI/cd
+    not_numbered: true
+  - title: chmod
+    url: /BASH_CLI/chmod
+    not_numbered: true
+  - title: cp
+    url: /BASH_CLI/cp
+    not_numbered: true
+  - title: crontab 
+    url: /BASH_CLI/crontab
+    not_numbered: true
+  - title: free
+    url: /BASH_CLI/free
+    not_numbered: true
+  - title: fsck
+    url: /BASH_CLI/fsck
+    not_numbered: true
+  - title: gzip
+    url: /BASH_CLI/gzip
+    not_numbered: true
+  - title: ifconfig
+    url: /BASH_CLI/ifconfig
+    not_numbered: true
+  - title: ip
+    url: /BASH_CLI/ip
+    not_numbered: true
+  - title: kill 
+    url: /BASH_CLI/kill
+    not_numbered: true
+  - title: ls
+    url: /BASH_CLI/ls
+    not_numbered: true
+  - title: lscpu
+    url: /BASH_CLI/lscpu
+    not_numbered: true
+  - title: mkdir
+    url: /BASH_CLI/mkdir
+    not_numbered: true
+  - title: mv
+    url: /BASH_CLI/mv
+    not_numbered: true
+  - title: netstat
+    url: /BASH_CLI/netstat
+    not_numbered: true
+  - title: nslookup
+    url: /BASH_CLI/nslookup
+    not_numbered: true
+  - title: ping
+    url: /BASH_CLI/ping
+    not_numbered: true
+  - title: ps
+    url: /BASH_CLI/ps
+    not_numbered: true
+  - title: rm
+    url: /BASH_CLI/rm
+    not_numbered: true
+  - title: tail
+    url: /BASH_CLI/tail
+    not_numbered: true
+  - title: top
+    url: /BASH_CLI/top
+    not_numbered: true
+  - title: traceroute
+    url: /BASH_CLI/traceroute
+    not_numbered: true
+

@@ -1,0 +1,91 @@
+---
+redirect_from:
+  - "/cmd-cli/systeminfo"
+title: |-
+  systeminfo
+pagenum: 14
+prev_page:
+  url: /CMD_CLI/ren.html
+next_page:
+  url: /CMD_CLI/tracert.html
+suffix: .md
+search: computer command u srvmain systeminfo displays configuration information s output domain p fo list maindom syntax table account specified user format view named type operating system examples bkmkexamples password csv name not permissions parameter values remotely located hiropln line key detailed its including security product id hardware properties such ram disk space network cards username nh parameters parameterdescription computerspecifies ip address remote backslashes default local usernameruns uses currently logged issuing passwordspecifies formatspecifies following brtable brlist brcsv comma separated nhsuppresses column headers valid set help prompt aexamples ssw additional references md
+title: systeminfo
+description: "Windows Commands topic for **** - "
+ms.custom: na
+ms.prod: windows-server
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 39954968-3c2e-4d3e-9d89-c9c43347461e
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">systeminfo</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Displays detailed configuration information about a computer and its operating system, including operating system configuration, security information, product ID, and hardware properties (such as RAM, disk space, and network cards).</p>
+<p>For examples of how to use this command, see <a href="#BKMK_examples">Examples</a>.</p>
+<h2 id="Syntax">Syntax<a class="anchor-link" href="#Syntax"> </a></h2>
+<pre><code>Systeminfo [/s &lt;Computer&gt; [/u &lt;Domain&gt;\&lt;UserName&gt; [/p &lt;Password&gt;]]] [/fo {TABLE | LIST | CSV}] [/nh]</code></pre>
+<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h2><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/s \<Computer></td>
+<td>Specifies the name or IP address of a remote computer (do not use backslashes). The default is the local computer.</td>
+</tr>
+<tr>
+<td>/u \<Domain>\<UserName></td>
+<td>Runs the command with the account permissions of the specified user account. If <strong>/u</strong> is not specified, this command uses the permissions of the user who is currently logged on to the computer that is issuing the command.</td>
+</tr>
+<tr>
+<td>/p \<Password></td>
+<td>Specifies the password of the user account that is specified in the <strong>/u</strong> parameter.</td>
+</tr>
+<tr>
+<td>/fo \<Format></td>
+<td>Specifies the output format with one of the following values:&lt;/br&gt;TABLE: Displays output in a table.&lt;/br&gt;LIST: Displays output in a list.&lt;/br&gt;CSV: Displays output in Comma Separated Values format.</td>
+</tr>
+<tr>
+<td>/nh</td>
+<td>Suppresses column headers in the output. Valid when the <strong>/fo</strong> parameter is set to TABLE or CSV.</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>Displays help at the command prompt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Examples"><a name="BKMK_examples" />Examples<a class="anchor-link" href="#Examples"> </a></h2><p>To view configuration information for a computer named Srvmain, type:</p>
+<p><strong>systeminfo /s srvmain</strong></p>
+<p>To remotely view configuration information for a computer named Srvmain2 that is located on the Maindom domain, type:</p>
+<p><strong>systeminfo /s srvmain2 /u maindom\hiropln</strong></p>
+<p>To remotely view configuration information (in list format) for a computer named Srvmain2 that is located on the Maindom domain, type:</p>
+<p><strong>systeminfo /s srvmain2 /u maindom\hiropln /p p@ssW23 /fo list</strong></p>
+<h4 id="Additional-references">Additional references<a class="anchor-link" href="#Additional-references"> </a></h4><p><a href="command-line-syntax-key.md">Command-Line Syntax Key</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

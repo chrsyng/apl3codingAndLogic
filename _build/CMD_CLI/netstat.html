@@ -1,0 +1,138 @@
+---
+redirect_from:
+  - "/cmd-cli/netstat"
+title: |-
+  netstat
+pagenum: 11
+prev_page:
+  url: /CMD_CLI/move.html
+next_page:
+  url: /CMD_CLI/ping.html
+suffix: .md
+search: tcp statistics protocol ip ipv udp netstat displays connections port parameter active protocols n s shown command address windows computer used p display server o name type r ethernet icmp icmpv parameters syntax e interval process connection specified information only local established ports listening routing table combined names pid tcpv udpv installed selected every seconds corresponds unless not yet asterisk state states finwait network ids line key applies semi annual channel without description such bytes packets sent received however addresses numbers expressed numerically attempt made determine includes id application based processes tab task manager shows case default specify set contents
+title: netstat
+description: "Windows Commands topic for **** - "
+ms.custom: na
+ms.prod: windows-server
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 60e2718f-93cc-4ceb-bf0e-58a6a6e4fc8b
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">netstat</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>Applies To: Windows Server (Semi-Annual Channel), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012</p>
+</blockquote>
+<p>Displays active TCP connections, ports on which the computer is listening, Ethernet statistics, the IP routing table, IPv4 statistics (for the IP, ICMP, TCP, and UDP protocols), and IPv6 statistics (for the IPv6, ICMPv6, TCP over IPv6, and UDP over IPv6 protocols). Used without parameters, <strong>netstat</strong> displays active TCP connections.</p>
+<h2 id="Syntax">Syntax<a class="anchor-link" href="#Syntax"> </a></h2>
+<pre><code>netstat [-a] [-e] [-n] [-o] [-p &lt;Protocol&gt;] [-r] [-s] [&lt;Interval&gt;]</code></pre>
+<h3 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h3><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a</td>
+<td>Displays all active TCP connections and the TCP and UDP ports on which the computer is listening.</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>Displays Ethernet statistics, such as the number of bytes and packets sent and received. This parameter can be combined with <strong>-s</strong>.</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>Displays active TCP connections, however, addresses and port numbers are expressed numerically and no attempt is made to determine names.</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>Displays active TCP connections and includes the process ID (PID) for each connection. You can find the application based on the PID on the Processes tab in Windows Task Manager. This parameter can be combined with <strong>-a</strong>, <strong>-n</strong>, and <strong>-p</strong>.</td>
+</tr>
+<tr>
+<td>-p <Protocol></td>
+<td>Shows connections for the protocol specified by <em>Protocol</em>. In this case, the <em>Protocol</em> can be tcp, udp, tcpv6, or udpv6. If this parameter is used with <strong>-s</strong> to display statistics by protocol, <em>Protocol</em> can be tcp, udp, icmp, ip, tcpv6, udpv6, icmpv6, or ipv6.</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>Displays statistics by protocol. By default, statistics are shown for the TCP, UDP, ICMP, and IP protocols. If the IPv6 protocol is installed, statistics are shown for the TCP over IPv6, UDP over IPv6, ICMPv6, and IPv6 protocols. The <strong>-p</strong> parameter can be used to specify a set of protocols.</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>Displays the contents of the IP routing table. This is equivalent to the route print command.</td>
+</tr>
+<tr>
+<td><Interval></td>
+<td>Redisplays the selected information every <em>Interval</em> seconds. Press CTRL+C to stop the redisplay. If this parameter is omitted, <strong>netstat</strong> prints the selected information only once.</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>Displays help at the command prompt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Remarks">Remarks<a class="anchor-link" href="#Remarks"> </a></h2><ul>
+<li>Parameters used with this command must be prefixed with a hyphen (<strong>-</strong>) rather than a slash (<strong>/</strong>).</li>
+<li><strong>netstat</strong> provides statistics for the following:<ul>
+<li>Proto
+The name of the protocol (TCP or UDP).</li>
+<li>Local address
+The IP address of the local computer and the port number being used. The name of the local computer that corresponds to the IP address and the name of the port is shown unless the <strong>-n</strong> parameter is specified. If the port is not yet established, the port number is shown as an asterisk (*).</li>
+<li>foreign address
+The IP address and port number of the remote computer to which the socket is connected. The names that corresponds to the IP address and the port are shown unless the <strong>-n</strong> parameter is specified. If the port is not yet established, the port number is shown as an asterisk (*).</li>
+<li>(state)
+Indicates the state of a TCP connection. The possible states are as follows:
+CLOSE_WAIT
+CLOSED
+ESTABLISHED
+FIN_WAIT_1
+FIN_WAIT_2
+LAST_ACK
+listEN
+SYN_RECEIVED
+SYN_SEND
+timeD_WAIT
+for more information about the states of a TCP connection, see Rfc 793.</li>
+</ul>
+</li>
+<li>This command is available only if the Internet Protocol (TCP/IP) protocol is installed as a component in the properties of a network adapter in Network Connections.</li>
+</ul>
+<h2 id="Examples"><a name="BKMK_Examples" />Examples<a class="anchor-link" href="#Examples"> </a></h2><p>To display both the Ethernet statistics and the statistics for all protocols, type:</p>
+
+<pre><code>netstat -e -s</code></pre>
+<p>To display the statistics for only the TCP and UDP protocols, type:</p>
+
+<pre><code>netstat -s -p tcp udp</code></pre>
+<p>To display active TCP connections and the process IDs every 5 seconds, type:</p>
+
+<pre><code>netstat -o 5</code></pre>
+<p>To display active TCP connections and the process IDs using numerical form, type:</p>
+
+<pre><code>netstat -n -o</code></pre>
+<h2 id="additional-references">additional references<a class="anchor-link" href="#additional-references"> </a></h2><ul>
+<li><a href="command-line-syntax-key.md">Command-Line Syntax Key</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

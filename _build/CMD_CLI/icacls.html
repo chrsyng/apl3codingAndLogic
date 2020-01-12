@@ -1,0 +1,195 @@
+---
+redirect_from:
+  - "/cmd-cli/icacls"
+title: |-
+  icacls
+pagenum: 7
+prev_page:
+  url: /CMD_CLI/dir.html
+next_page:
+  url: /CMD_CLI/ipconfig.html
+suffix: .md
+search: sid specified c files access l q directory aclfile icacls dacls t permissions grant d file user rights read perm explicit br r level restore matching ace only examples its inherited removes delete generic attributes inherit windows type test control directories command syntax deny g sidold sidnew operation subdirectories any save explicitly acls grants granted occurrences inheritance form execute wdac dac s data applies stored remove setintegritylevel policy substitute display messages owner finds dacl security not canonical replaces previously added ci oi integrity m precede applied requires parameter e aces either numerical denials list add extended named line key displays
+title: icacls
+description: "Windows Commands topic for **** - "
+ms.custom: na
+ms.prod: windows-server
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 403edfcc-328a-479d-b641-80c290ccf73e
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 08/21/2018
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">icacls</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="icacls">icacls<a class="anchor-link" href="#icacls"> </a></h1><p>Displays or modifies discretionary access control lists (DACLs) on specified files, and applies stored DACLs to files in specified directories.</p>
+<p>For examples of how to use this command, see <a href="#examples">Examples</a>.</p>
+<h2 id="Syntax">Syntax<a class="anchor-link" href="#Syntax"> </a></h2>
+<pre><code>icacls &lt;FileName&gt; [/grant[:r] &lt;Sid&gt;:&lt;Perm&gt;[...]] [/deny &lt;Sid&gt;:&lt;Perm&gt;[...]] [/remove[:g|:d]] &lt;Sid&gt;[...]] [/t] [/c] [/l] [/q] [/setintegritylevel &lt;Level&gt;:&lt;Policy&gt;[...]]
+icacls &lt;Directory&gt; [/substitute &lt;SidOld&gt; &lt;SidNew&gt; [...]] [/restore &lt;ACLfile&gt; [/c] [/l] [/q]]</code></pre>
+<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h2><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\<FileName></td>
+<td>Specifies the file for which to display DACLs.</td>
+</tr>
+<tr>
+<td>\<Directory></td>
+<td>Specifies the directory for which to display DACLs.</td>
+</tr>
+<tr>
+<td>/t</td>
+<td>Performs the operation on all specified files in the current directory and its subdirectories.</td>
+</tr>
+<tr>
+<td>/c</td>
+<td>Continues the operation despite any file errors. Error messages will still be displayed.</td>
+</tr>
+<tr>
+<td>/l</td>
+<td>Performs the operation on a symbolic link versus its destination.</td>
+</tr>
+<tr>
+<td>/q</td>
+<td>Suppresses success messages.</td>
+</tr>
+<tr>
+<td>[/save \<ACLfile> [/t] [/c] [/l] [/q]]</td>
+<td>Stores DACLs for all matching files into <em>ACLfile</em> for later use with <strong>/restore</strong>.</td>
+</tr>
+<tr>
+<td>[/setowner \<Username> [/t] [/c] [/l] [/q]]</td>
+<td>Changes the owner of all matching files to the specified user.</td>
+</tr>
+<tr>
+<td>[/findSID \<Sid> [/t] [/c] [/l] [/q]]</td>
+<td>Finds all matching files that contain a DACL explicitly mentioning the specified security identifier (SID).</td>
+</tr>
+<tr>
+<td>[/verify [/t] [/c] [/l] [/q]]</td>
+<td>Finds all files with ACLs that are not canonical or have lengths inconsistent with ACE (access control entry) counts.</td>
+</tr>
+<tr>
+<td>[/reset [/t] [/c] [/l] [/q]]</td>
+<td>Replaces ACLs with default inherited ACLs for all matching files.</td>
+</tr>
+<tr>
+<td>[/grant[:r] \<Sid>:<Perm>[...]]</td>
+<td>Grants specified user access rights. Permissions replace previously granted explicit permissions.&lt;/br&gt;Without <strong>:r</strong>, permissions are added to any previously granted explicit permissions.</td>
+</tr>
+<tr>
+<td>[/deny \<Sid>:<Perm>[...]]</td>
+<td>Explicitly denies specified user access rights. An explicit deny ACE is added for the stated permissions and the same permissions in any explicit grant are removed.</td>
+</tr>
+<tr>
+<td>[/remove[:g|:d]] \<Sid>[...]] [/t] [/c] [/l] [/q]</td>
+<td>Removes all occurrences of the specified SID from the DACL.&lt;/br&gt;<strong>:g</strong> removes all occurrences of granted rights to the specified SID.&lt;/br&gt;<strong>:d</strong> removes all occurrences of denied rights to the specified SID.</td>
+</tr>
+<tr>
+<td>[/setintegritylevel [(CI)(OI)]\<Level>:<Policy>[...]]</td>
+<td>Explicitly adds an integrity ACE to all matching files. <em>Level</em> is specified as:&lt;/br&gt;-   <strong>L</strong>[ow]&lt;/br&gt;-   <strong>M</strong>[edium]&lt;/br&gt;-   <strong>H</strong>[igh]&lt;/br&gt;Inheritance options for the integrity ACE may precede the level and are applied only to directories.</td>
+</tr>
+<tr>
+<td>[/substitute \<SidOld> <SidNew> [...]]</td>
+<td>Replaces an existing SID (<em>SidOld</em>) with a new SID (<em>SidNew</em>). Requires the <em>Directory</em> parameter.</td>
+</tr>
+<tr>
+<td>/restore \<ACLfile> [/c] [/l] [/q]</td>
+<td>Applies stored DACLs from <em>ACLfile</em> to files in the specified directory. Requires the <em>Directory</em> parameter.</td>
+</tr>
+<tr>
+<td>/inheritancelevel:[e|d|r]</td>
+<td>Sets the inheritance level: <br>  <strong>e</strong> - Enables enheritance <br><strong>d</strong> - Disables inheritance and copies the ACEs <br><strong>r</strong> - Removes all inherited ACEs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Remarks">Remarks<a class="anchor-link" href="#Remarks"> </a></h2><ul>
+<li>SIDs may be in either numerical or friendly name form. If you use a numerical form, affix the wildcard character <strong>&#42;</strong> to the beginning of the SID.</li>
+<li><strong>icacls</strong> preserves the canonical order of ACE entries as:  <ul>
+<li>Explicit denials</li>
+<li>Explicit grants</li>
+<li>Inherited denials</li>
+<li>Inherited grants</li>
+</ul>
+</li>
+<li><p><em>Perm</em> is a permission mask that can be specified in one of the following forms:</p>
+<ul>
+<li><p>A sequence of simple rights:</p>
+<p><strong>F</strong> (full access)</p>
+<p><strong>M</strong> (modify access)</p>
+<p><strong>RX</strong> (read and execute access)</p>
+<p><strong>R</strong> (read-only access)</p>
+<p><strong>W</strong> (write-only access)</p>
+</li>
+<li><p>A comma-separated list in parenthesis of specific rights:</p>
+<p><strong>D</strong> (delete)</p>
+<p><strong>RC</strong> (read control)</p>
+<p><strong>WDAC</strong> (write DAC)</p>
+<p><strong>WO</strong> (write owner)</p>
+<p><strong>S</strong> (synchronize)</p>
+<p><strong>AS</strong> (access system security)</p>
+<p><strong>MA</strong> (maximum allowed)</p>
+<p><strong>GR</strong> (generic read)</p>
+<p><strong>GW</strong> (generic write)</p>
+<p><strong>GE</strong> (generic execute)</p>
+<p><strong>GA</strong> (generic all)</p>
+<p><strong>RD</strong> (read data/list directory)</p>
+<p><strong>WD</strong> (write data/add file)</p>
+<p><strong>AD</strong> (append data/add subdirectory)</p>
+<p><strong>REA</strong> (read extended attributes)</p>
+<p><strong>WEA</strong> (write extended attributes)</p>
+<p><strong>X</strong> (execute/traverse)</p>
+<p><strong>DC</strong> (delete child)</p>
+<p><strong>RA</strong> (read attributes)</p>
+<p><strong>WA</strong> (write attributes)</p>
+</li>
+</ul>
+</li>
+<li><p>Inheritance rights may precede either <em>Perm</em> form, and they are applied only to directories:</p>
+<p><strong>(OI)</strong>: object inherit</p>
+<p><strong>(CI)</strong>: container inherit</p>
+<p><strong>(IO)</strong>: inherit only</p>
+<p><strong>(NP)</strong>: do not propagate inherit</p>
+</li>
+</ul>
+<h2 id="Examples">Examples<a class="anchor-link" href="#Examples"> </a></h2><p>To save the DACLs for all files in the C:\Windows directory and its subdirectories to the ACLFile file, type:</p>
+
+<pre><code>icacls c:\windows\* /save aclfile /t</code></pre>
+<p>To restore the DACLs for every file within ACLFile that exists in the C:\Windows directory and its subdirectories, type:</p>
+
+<pre><code>icacls c:\windows\ /restore aclfile</code></pre>
+<p>To grant the user User1 Delete and Write DAC permissions to a file named "Test1", type:</p>
+
+<pre><code>icacls test1 /grant User1:(d,wdac)</code></pre>
+<p>To grant the user defined by SID S-1-1-0 Delete and Write DAC permissions to a file, named "Test2", type:</p>
+
+<pre><code>icacls test2 /grant *S-1-1-0:(d,wdac)</code></pre>
+<h4 id="Additional-references">Additional references<a class="anchor-link" href="#Additional-references"> </a></h4><p><a href="command-line-syntax-key.md">Command-Line Syntax Key</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

@@ -1,0 +1,88 @@
+---
+redirect_from:
+  - "/cmd-cli/ren"
+title: |-
+  ren
+pagenum: 13
+prev_page:
+  url: /CMD_CLI/ping.html
+next_page:
+  url: /CMD_CLI/systeminfo.html
+suffix: .md
+search: filename name command file ren files characters rename drive path wildcard syntax new directory examples bkmkexamples filenamespecifies specify displays cannot change txt extensions doc type chap part line key renames directories same parameters parameterdescription location set want include names multiple help prompt remarks renaming across drives move different either parameter represented identical corresponding must unique matches existing following message duplicate not found aexamples current additional references md
+title: ren
+description: Learn how to rename a file or directory with the ren command.
+ms.custom: na
+ms.prod: windows-server
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 60398e12-a05d-4524-a73a-0a925943e21d
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 07/11/2018
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">ren</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Renames files or directories. This command is the same as the <strong>rename</strong> command.</p>
+<p>For examples of how to use this command, see <a href="#BKMK_examples">Examples</a>.</p>
+<h2 id="Syntax">Syntax<a class="anchor-link" href="#Syntax"> </a></h2>
+<pre><code>ren [&lt;Drive&gt;:][&lt;Path&gt;]&lt;FileName1&gt; &lt;FileName2&gt;
+rename [&lt;Drive&gt;:][&lt;Path&gt;]&lt;FileName1&gt; &lt;FileName2&gt;</code></pre>
+<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h2><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[\<Drive>:][\<Path>]\<FileName1></td>
+<td>Specifies the location and name of the file or set of files you want to rename. <em>FileName1</em> can include wildcard characters (<strong>&#42;</strong> and <strong>?</strong>).</td>
+</tr>
+<tr>
+<td>\<FileName2></td>
+<td>Specifies the new name for the file. You can use wildcard characters to specify new names for multiple files.</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>Displays help at the command prompt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Remarks">Remarks<a class="anchor-link" href="#Remarks"> </a></h2><ul>
+<li>You cannot specify a new drive or path when renaming files.</li>
+<li>You cannot use the <strong>ren</strong> command to rename files across drives or to move files to a different directory.</li>
+<li>You can use wildcard characters (<strong>&#42;</strong> and <strong>?</strong>) in either <em>FileName</em> parameter. Characters that are represented by wildcard characters in <em>FileName2</em> will be identical to the corresponding characters in <em>FileName1</em>.</li>
+<li><em>FileName2</em> must be a unique file name. If <em>FileName2</em> matches an existing file name, <strong>ren</strong> displays the following message:  
+<pre><code>Duplicate file name or file not found</code></pre>
+</li>
+</ul>
+<h2 id="Examples"><a name="BKMK_examples" />Examples<a class="anchor-link" href="#Examples"> </a></h2><p>To change all the .txt file name extensions in the current directory to .doc extensions, type:</p>
+
+<pre><code>ren *.txt *.doc</code></pre>
+<p>To change the name of a directory from Chap10 to Part10, type:</p>
+
+<pre><code>ren chap10 part10</code></pre>
+<h4 id="Additional-references">Additional references<a class="anchor-link" href="#Additional-references"> </a></h4><p><a href="command-line-syntax-key.md">Command-Line Syntax Key</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

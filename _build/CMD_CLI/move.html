@@ -1,0 +1,88 @@
+---
+redirect_from:
+  - "/cmd-cli/move"
+title: |-
+  move
+pagenum: 10
+prev_page:
+  url: /CMD_CLI/mkdir.html
+next_page:
+  url: /CMD_CLI/netstat.html
+suffix: .md
+search: move files directory command name y want file path line syntax examples bkmkexamples source target prompting confirm overwrite existing destination rename should prompt volume efs xls data secondq reports key moves another parameters parameterdescription ysuppresses ycauses sourcespecifies current targetspecifies desired displays help remarks option might preset copycmd environment variable override default before overwriting unless copy run within batch script moving encrypted does not support encrypting system results error decrypt supports aexamples extension type additional references md
+title: move
+description: "Windows Commands topic for **** - "
+ms.custom: na
+ms.prod: windows-server
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: fde290a8-d385-450f-8987-ee837fed667d
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">move</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Moves one or more files from one directory to another directory.</p>
+<p>For examples of how to use this command, see <a href="#BKMK_examples">Examples</a>.</p>
+<h2 id="Syntax">Syntax<a class="anchor-link" href="#Syntax"> </a></h2>
+<pre><code>move [{/y | /-y}] [&lt;Source&gt;] [&lt;Target&gt;]</code></pre>
+<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h2><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/y</td>
+<td>Suppresses prompting to confirm that you want to overwrite an existing destination file.</td>
+</tr>
+<tr>
+<td>/-y</td>
+<td>Causes prompting to confirm that you want to overwrite an existing destination file.</td>
+</tr>
+<tr>
+<td>\<Source></td>
+<td>Specifies the path and name of the file or files to move. If you want to move or rename a directory, <em>Source</em> should be the current directory path and name.</td>
+</tr>
+<tr>
+<td>\<Target></td>
+<td>Specifies the path and name to move files to. If you want to move or rename a directory, <em>Target</em> should be the desired directory path and name.</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>Displays help at the command prompt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Remarks">Remarks<a class="anchor-link" href="#Remarks"> </a></h2><ul>
+<li>The <strong>/y</strong> command-line option might be preset in the COPYCMD environment variable. You can override this with <strong>/-y</strong> on the command line. The default is to prompt before overwriting files unless the <strong>copy</strong> command is run from within a batch script.</li>
+<li>Moving encrypted files to a volume that does not support Encrypting File System (EFS) results in an error. Decrypt the files first or move the files to a volume that supports EFS.</li>
+</ul>
+<h2 id="Examples"><a name="BKMK_examples" />Examples<a class="anchor-link" href="#Examples"> </a></h2><p>To move all files with the .xls extension from the \Data directory to the \Second_Q\Reports directory, type:</p>
+
+<pre><code>move \data\*.xls \second_q\reports\</code></pre>
+<h4 id="Additional-references">Additional references<a class="anchor-link" href="#Additional-references"> </a></h4><p><a href="command-line-syntax-key.md">Command-Line Syntax Key</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

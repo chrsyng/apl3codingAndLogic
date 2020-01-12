@@ -1,0 +1,130 @@
+---
+redirect_from:
+  - "/cmd-cli/del"
+title: |-
+  Delete
+pagenum: 5
+prev_page:
+  url: /CMD_CLI/chkdsk.html
+next_page:
+  url: /CMD_CLI/dir.html
+suffix: .md
+search: files del command delete file press names directory following deleted displays specified deletion current not name y n folder type syntax p s attributes wildcards read only test c deletes same erase examples bkmkexamples f q parameters list confirmation before deleting being prompt cancel example work enter wildcard characters bat line key parameterdescription namesspecifies directories used multiple within pprompts fforces sdeletes subdirectories qspecifies quiet mode prompted attributesdeletes based brr brh hidden bri content indexed brs system bra ready archiving brl reparse points br prefix meaning help remarks caution disk cannot retrieve sends message filename confirm display next group stop ctrlc
+title: del
+description: "Windows Commands topic for **** - "
+ms.custom: na
+ms.prod: windows-server
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 346eede2-2085-44f5-9936-6877b5d5a833
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Delete</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="del">del<a class="anchor-link" href="#del"> </a></h1><p>Deletes one or more files. This command is the same as the <strong>erase</strong> command.</p>
+<p>For examples of how to use this command, see <a href="#BKMK_examples">Examples</a>.</p>
+<h2 id="Syntax">Syntax<a class="anchor-link" href="#Syntax"> </a></h2>
+<pre><code>del [/p] [/f] [/s] [/q] [/a[:]&lt;Attributes&gt;] &lt;Names&gt;
+erase [/p] [/f] [/s] [/q] [/a[:]&lt;Attributes&gt;] &lt;Names&gt;</code></pre>
+<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h2><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\<Names></td>
+<td>Specifies a list of one or more files or directories. Wildcards may be used to delete multiple files. If a directory is specified, all files within the directory will be deleted.</td>
+</tr>
+<tr>
+<td>/p</td>
+<td>Prompts for confirmation before deleting the specified file.</td>
+</tr>
+<tr>
+<td>/f</td>
+<td>Forces deletion of read-only files.</td>
+</tr>
+<tr>
+<td>/s</td>
+<td>Deletes specified files from the current directory and all subdirectories. Displays the names of the files as they are being deleted.</td>
+</tr>
+<tr>
+<td>/q</td>
+<td>Specifies quiet mode. You are not prompted for delete confirmation.</td>
+</tr>
+<tr>
+<td>/a[:]\<Attributes></td>
+<td>Deletes files based on the following file attributes:&lt;/br&gt;<strong>r</strong> Read-only files&lt;/br&gt;<strong>h</strong> Hidden files&lt;/br&gt;<strong>i</strong> Not content indexed files&lt;/br&gt;<strong>s</strong> System files&lt;/br&gt;<strong>a</strong> Files ready for archiving&lt;/br&gt;<strong>l</strong> Reparse points&lt;/br&gt;-  Prefix meaning 'not'</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>Displays help at the command prompt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Remarks">Remarks<a class="anchor-link" href="#Remarks"> </a></h2><blockquote><p>[!CAUTION]
+If you use <strong>del</strong> to delete a file from your disk, you cannot retrieve it.</p>
+<ul>
+<li>If you use <strong>/p</strong>, <strong>del</strong> displays the name of a file and sends the following message:</li>
+</ul>
+</blockquote>
+
+<pre><code>`FileName, Delete (Y/N)?`
+
+To confirm the deletion, press Y. To cancel the deletion and display the next file name (that is, if you specified a group of files), press N. To stop the **del** command, press CTRL+C.
+</code></pre>
+<ul>
+<li>If you disable command extensions, <strong>/s</strong> displays the names of any files that were not found instead of displaying the names of files that are being deleted (that is, the behavior is reversed).</li>
+<li>If you specify a folder in <em>Names</em>, all of the files in the folder are deleted. For example, the following command deletes all of the files in the \Work folder:  
+<pre><code>del \work</code></pre>
+</li>
+<li><p>You can use wildcards (<strong>&#42;</strong> and <strong>?</strong>) to delete more than one file at a time. However, to avoid deleting files unintentionally, you should use wildcards cautiously with the <strong>del</strong> command. For example, if you type the following command:</p>
+
+<pre><code>del *.*</code></pre>
+<p>The <strong>del</strong> command displays the following prompt:</p>
+<p><code>Are you sure (Y/N)?</code></p>
+<p>To delete all of the files in the current directory, press Y and then press ENTER. To cancel the deletion, press N and then press ENTER.</p>
+</li>
+</ul>
+<blockquote><p>[!NOTE]
+Before you use wildcard characters with the <strong>del</strong> command, use the same wildcard characters with the <strong>dir</strong> command to list all the files that will be deleted.</p>
+<ul>
+<li>The <strong>del</strong> command, with different parameters, is available from the Recovery Console.</li>
+</ul>
+</blockquote>
+<h2 id="Examples"><a name="BKMK_examples" />Examples<a class="anchor-link" href="#Examples"> </a></h2><p>To delete all the files in a folder named Test on drive C, type either of the following:</p>
+
+<pre><code>del c:\test
+del c:\test\*.*</code></pre>
+<p>To delete all files with the .bat file name extension from the current directory, type:</p>
+
+<pre><code>del *.bat</code></pre>
+<p>To delete all read-only files in the current directory, type:</p>
+
+<pre><code>del /a:r *.*</code></pre>
+<h4 id="Additional-references">Additional references<a class="anchor-link" href="#Additional-references"> </a></h4><p><a href="command-line-syntax-key.md">Command-Line Syntax Key</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

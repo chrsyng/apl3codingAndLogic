@@ -1,0 +1,108 @@
+---
+redirect_from:
+  - "/cmd-cli/cd"
+title: |-
+  Change directory
+pagenum: 2
+prev_page:
+  url: /CMD_CLI/intro.html
+next_page:
+  url: /CMD_CLI/chkdsk.html
+suffix: .md
+search: drive cd directory command current change displays path type example c same chdir syntax extensions name used names without parameters examples bkmkexamples d specifies display different want case disk temp spaces quotation marks username programs start menu root line key changes only letter specified note parameterdescription dchanges well pathspecifies parent folder help prompt remarks enabled following conditions apply string converted set not treated delimiters contain enclosing required however disabled disable cmd e off aexamples top hierarchy return default verify additional references md
+title: cd
+description: "Windows Commands topic for **** - "
+ms.custom: na
+ms.prod: windows-server
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 932d9cc1-3dff-40da-835c-1cb0894874f1
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Change directory</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="cd">cd<a class="anchor-link" href="#cd"> </a></h1><p>Displays the name of or changes the current directory. If used with only a drive letter (for example, <code>cd C:</code>), <strong>cd</strong> displays the names of the current directory in the specified drive. If used without parameters, <strong>cd</strong> displays the current drive and directory.</p>
+<blockquote><p>[!NOTE]
+This command is the same as the <strong>chdir</strong> command.</p>
+</blockquote>
+<p>For examples of how to use this command, see <a href="#BKMK_examples">Examples</a>.</p>
+<h2 id="Syntax">Syntax<a class="anchor-link" href="#Syntax"> </a></h2>
+<pre><code>cd [/d] [&lt;Drive&gt;:][&lt;Path&gt;]
+cd [..]
+chdir [/d] [&lt;Drive&gt;:][&lt;Path&gt;]
+chdir [..]</code></pre>
+<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h2><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/d</td>
+<td>Changes the current drive as well as the current directory for a drive.</td>
+</tr>
+<tr>
+<td>\<Drive>:</td>
+<td>Specifies the drive to display or change (if different from the current drive).</td>
+</tr>
+<tr>
+<td>\<Path></td>
+<td>Specifies the path to the directory that you want to display or change.</td>
+</tr>
+<tr>
+<td>[..]</td>
+<td>Specifies that you want to change to the parent folder.</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>Displays help at the command prompt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Remarks">Remarks<a class="anchor-link" href="#Remarks"> </a></h2><p>If command extensions are enabled, the following conditions apply to the <strong>cd</strong> command:</p>
+<ul>
+<li>The current directory string is converted to use the same case as the names on the disk. For example, <code>cd C:\TEMP</code> would set the current directory to C:\Temp if that is the case on the disk.</li>
+<li>Spaces are not treated as delimiters, so <em>Path</em> can contain spaces without enclosing quotation marks. For example:  
+<pre><code>cd username\programs\start menu</code></pre>
+is the same as:  
+<pre><code>cd "username\programs\start menu"</code></pre>
+The quotation marks are required, however, if extensions are disabled.</li>
+</ul>
+<p>To disable command extensions, type:</p>
+
+<pre><code>cmd /e:off</code></pre>
+<h2 id="Examples"><a name="BKMK_examples" />Examples<a class="anchor-link" href="#Examples"> </a></h2><p>The root directory is the top of the directory hierarchy for a drive. To return to the root directory, type:</p>
+
+<pre><code>cd\</code></pre>
+<p>To change the default directory on a drive that is different from the one you are on, type:</p>
+
+<pre><code>cd [&lt;Drive&gt;:\[&lt;Directory&gt;]]</code></pre>
+<p>To verify the change to the directory, type:</p>
+
+<pre><code>cd [&lt;Drive&gt;:]</code></pre>
+<h4 id="Additional-references">Additional references<a class="anchor-link" href="#Additional-references"> </a></h4><p><a href="command-line-syntax-key.md">Command-Line Syntax Key</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

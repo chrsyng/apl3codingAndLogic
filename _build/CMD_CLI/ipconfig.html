@@ -1,0 +1,133 @@
+---
+redirect_from:
+  - "/cmd-cli/ipconfig"
+title: |-
+  IP configuration
+pagenum: 8
+prev_page:
+  url: /CMD_CLI/icacls.html
+next_page:
+  url: /CMD_CLI/mkdir.html
+suffix: .md
+search: adapter adapters ip configuration name ipconfig dhcp dns parameter configured address type tcp local specified class id names obtain automatically without parameters renew release client cache not specify only computers current ipv specific included appears available command string area connection displays dynamic protocol syntax showclassid setclassid full resolver entries any computer discard server either asterisk wildcard character display network values settings addresses flushdns classid interfaces such contents resolve troubleshooting registration determine sends dhcprelease message disables dhcpv renews set place example contain matches start con test line key refreshes host domain system used internet version subnet mask default gateway allcompartments displaydns
+title: ipconfig
+description: "Windows Commands topic for **** - "
+ms.custom: na
+ms.prod: windows-server
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 15071c2c-4815-4893-93b2-ab30232e312e
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">IP configuration</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="ipconfig">ipconfig<a class="anchor-link" href="#ipconfig"> </a></h1><p>Displays all current TCP/IP network configuration values and refreshes Dynamic Host Configuration Protocol (DHCP) and Domain Name System (DNS) settings. Used without parameters, <strong>ipconfig</strong> displays Internet Protocol version 4 (IPv4) and IPv6 addresses, subnet mask, and default gateway for all adapters.</p>
+<h2 id="Syntax">Syntax<a class="anchor-link" href="#Syntax"> </a></h2>
+<pre><code>ipconfig [/allcompartments] [/all] [/renew [&lt;Adapter&gt;]] [/release [&lt;Adapter&gt;]] [/renew6[&lt;Adapter&gt;]] [/release6 [&lt;Adapter&gt;]] [/flushdns] [/displaydns] [/registerdns] [/showclassid &lt;Adapter&gt;] [/setclassid &lt;Adapter&gt; [&lt;ClassID&gt;]]</code></pre>
+<h3 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h3><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/all</td>
+<td>Displays the full TCP/IP configuration for all adapters. Adapters can represent physical interfaces, such as installed network adapters, or logical interfaces, such as dial-up connections.</td>
+</tr>
+<tr>
+<td>/allcompartments</td>
+<td>Displays the full TCP/IP configuration for all compartments.</td>
+</tr>
+<tr>
+<td>/displaydns</td>
+<td>Displays the contents of the DNS client resolver cache, which includes both entries preloaded from the local Hosts file and any recently obtained resource records for name queries resolved by the computer. The DNS Client service uses this information to resolve frequently queried names quickly, before querying its configured DNS servers.</td>
+</tr>
+<tr>
+<td>/flushdns</td>
+<td>Flushes and resets the contents of the DNS client resolver cache. During DNS troubleshooting, you can use this procedure to discard negative cache entries from the cache, as well as any other entries that have been added dynamically.</td>
+</tr>
+<tr>
+<td>/registerdns</td>
+<td>Initiates manual dynamic registration for the DNS names and IP addresses that are configured at a computer. You can use this parameter to troubleshoot a failed DNS name registration or resolve a dynamic update problem between a client and the DNS server without rebooting the client computer. The DNS settings in the advanced properties of the TCP/IP protocol determine which names are registered in DNS.</td>
+</tr>
+<tr>
+<td>/release [\<Adapter>]</td>
+<td>Sends a DHCPRELEASE message to the DHCP server to release the current DHCP configuration and discard the IP address configuration for either all adapters (if an adapter is not specified) or for a specific adapter if the <em>Adapter</em> parameter is included. This parameter disables TCP/IP for adapters configured to obtain an IP address automatically. To specify an adapter name, type the adapter name that appears when you use <strong>ipconfig</strong> without parameters.</td>
+</tr>
+<tr>
+<td>/release6[\<Adapter>]</td>
+<td>Sends a DHCPRELEASE message to the DHCPv6 server to release the current DHCP configuration and discard the IPv6 address configuration for either all adapters (if an adapter is not specified) or for a specific adapter if the <em>Adapter</em> parameter is included. This parameter disables TCP/IP for adapters configured to obtain an IP address automatically. To specify an adapter name, type the adapter name that appears when you use <strong>ipconfig</strong> without parameters.</td>
+</tr>
+<tr>
+<td>/renew [\<Adapter>]</td>
+<td>Renews DHCP configuration for all adapters (if an adapter is not specified) or for a specific adapter if the <em>Adapter</em> parameter is included. This parameter is available only on computers with adapters that are configured to obtain an IP address automatically. To specify an adapter name, type the adapter name that appears when you use <strong>ipconfig</strong> without parameters.</td>
+</tr>
+<tr>
+<td>/renew6 [\<Adapter>]</td>
+<td>Renews DHCPv6 configuration for all adapters (if an adapter is not specified) or for a specific adapter if the <em>Adapter</em> parameter is included. This parameter is available only on computers with adapters that are configured to obtain an IPv6 address automatically. To specify an adapter name, type the adapter name that appears when you use <strong>ipconfig</strong> without parameters.</td>
+</tr>
+<tr>
+<td>/setclassid \<Adapter>[ <ClassID>]</td>
+<td>Configures the DHCP class ID for a specified adapter. To set the DHCP class ID for all adapters, use the asterisk (<strong>&#42;</strong>) wildcard character in place of <em>Adapter</em>. This parameter is available only on computers with adapters that are configured to obtain an IP address automatically. If a DHCP class ID is not specified, the current class ID is removed.</td>
+</tr>
+<tr>
+<td>/showclassid \<Adapter></td>
+<td>Displays the DHCP class ID for a specified adapter. To see the DHCP class ID for all adapters, use the asterisk (<strong>&#42;</strong>) wildcard character in place of <em>Adapter</em>. This parameter is available only on computers with adapters that are configured to obtain an IP address automatically.</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>Displays Help at the command prompt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Remarks">Remarks<a class="anchor-link" href="#Remarks"> </a></h2><ul>
+<li>This command is most useful on computers that are configured to obtain an IP address automatically. This enables users to determine which TCP/IP configuration values have been configured by DHCP, Automatic Private IP Addressing (APIPA), or an alternate configuration.</li>
+<li>If the name you supply for <em>Adapter</em> contains any spaces, use quotation marks around the adapter name (example: <strong>"</strong><em>Adapter Name</em><strong>"</strong>).</li>
+<li>For adapter names, <strong>ipconfig</strong> supports the use of the asterisk (*) wildcard character to specify either adapters with names that begin with a specified string or adapters with names that contain a specified string. For example, <strong>Local*</strong> matches all adapters that start with the string Local and <strong>*Con*</strong> matches all adapters that contain the string Con.</li>
+</ul>
+<h2 id="Examples">Examples<a class="anchor-link" href="#Examples"> </a></h2><p>To display the basic TCP/IP configuration for all adapters, type:</p>
+
+<pre><code>ipconfig</code></pre>
+<p>To display the full TCP/IP configuration for all adapters, type:</p>
+
+<pre><code>ipconfig /all</code></pre>
+<p>To renew a DHCP-assigned IP address configuration for only the Local Area Connection adapter, type:</p>
+
+<pre><code>ipconfig /renew "Local Area Connection"</code></pre>
+<p>To flush the DNS resolver cache when troubleshooting DNS name resolution problems, type:</p>
+
+<pre><code>ipconfig /flushdns</code></pre>
+<p>To display the DHCP class ID for all adapters with names that start with Local, type:</p>
+
+<pre><code>ipconfig /showclassid Local*</code></pre>
+<p>To set the DHCP class ID for the Local Area Connection adapter to TEST, type:</p>
+
+<pre><code>ipconfig /setclassid "Local Area Connection" TEST</code></pre>
+<h4 id="Additional-references">Additional references<a class="anchor-link" href="#Additional-references"> </a></h4><ul>
+<li><a href="command-line-syntax-key.md">Command-Line Syntax Key</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
